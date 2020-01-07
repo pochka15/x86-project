@@ -4,6 +4,7 @@ OPENGL_FLAGS =  -lGL -lX11 -lpthread -lXrandr -lXi -ldl -lglfw -Werror -no-pie
 
 all: main.o x86_function.o glad.o
 	$(CC) $(CFLAGS) -o program main.o x86_function.o glad.o $(OPENGL_FLAGS)
+	make clean
 
 x86_function.o: src/x86_function.s
 	nasm -f elf64 -o x86_function.o src/x86_function.s

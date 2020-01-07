@@ -98,7 +98,7 @@ void setCursorPos(GLFWwindow* window, float *vertices) {
 // Converts 2 coords of pixel array into normal device coordinates
 void pix2NDC(float *arr, unsigned pointsNumber) {
   unsigned i = 0;
-  for (; i < pointsNumber; ++i) {
+  for (/* empty */; i < pointsNumber; ++i) {
     *arr = (*arr) * 2 / SCR_WIDTH - 1;
     ++arr;
     *arr =(*arr) * 2 / SCR_HEIGHT - 1;
@@ -130,6 +130,7 @@ int main() {
 
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
+  // 5 curve vertices
   float base_vertices[] = {
     50, 50,
     50, 500,
